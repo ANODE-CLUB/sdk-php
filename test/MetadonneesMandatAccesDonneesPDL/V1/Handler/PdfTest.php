@@ -27,9 +27,9 @@ class PdfTest extends TestCase
         // Créer un mandat d'exemple
         $mandant = new PersonnePhysique('Dupont', 'Jean', 'Address', 'email@test.com', '0123456789');
         $mandataire = new PersonneMorale(
-            'Mandataire Corp', 
-            '123456789', 
-            'Mandataire Address', 
+            'Mandataire Corp',
+            '123456789',
+            'Mandataire Address',
             new RepresentantLegal('Legal', 'Rep', 'Manager', 'legal@corp.com', '0987654321')
         );
 
@@ -82,13 +82,13 @@ class PdfTest extends TestCase
         // Créer un fichier PDF vide basique
         $basicPdfContent = "%PDF-1.4\n1 0 obj<</Type/Catalog/Pages 2 0 R>>endobj\n2 0 obj<</Type/Pages/Kids[3 0 R]/Count 1>>endobj\n3 0 obj<</Type/Page/Parent 2 0 R/MediaBox[0 0 612 792]>>endobj\nxref\n0 4\n0000000000 65535 f \n0000000009 00000 n \n0000000058 00000 n \n0000000115 00000 n \ntrailer<</Size 4/Root 1 0 R>>\nstartxref\n184\n%%EOF";
         file_put_contents($this->tempPdfPath, $basicPdfContent);
-        
+
         $pdf = new Pdf($this->tempPdfPath);
 
         $result = $pdf->setMandat($this->sampleMandat);
 
         $this->assertInstanceOf(Pdf::class, $result);
-        
+
         $content = file_get_contents($this->tempPdfPath);
         $this->assertStringContainsString('anodeMetadonneesMandatAccesDonneesPDL:metadonnees', $content);
     }
@@ -345,7 +345,7 @@ class PdfTest extends TestCase
         $result = $pdf->setMandat($this->sampleMandat);
 
         $this->assertInstanceOf(Pdf::class, $result);
-        
+
         $content = file_get_contents($this->tempPdfPath);
         $this->assertStringContainsString('<rdf:RDF', $content);
         $this->assertStringContainsString('anodeMetadonneesMandatAccesDonneesPDL:metadonnees', $content);
@@ -364,7 +364,7 @@ class PdfTest extends TestCase
         $result = $pdf->setMandat($this->sampleMandat);
 
         $this->assertInstanceOf(Pdf::class, $result);
-        
+
         $content = file_get_contents($this->tempPdfPath);
         $this->assertStringContainsString('rdf:Description', $content);
         $this->assertStringContainsString('anodeMetadonneesMandatAccesDonneesPDL', $content);
@@ -384,7 +384,7 @@ class PdfTest extends TestCase
         $result = $pdf->setMandat($this->sampleMandat);
 
         $this->assertInstanceOf(Pdf::class, $result);
-        
+
         $content = file_get_contents($this->tempPdfPath);
         $this->assertStringContainsString('<dc:title>Existing Title</dc:title>', $content);
         $this->assertStringContainsString('anodeMetadonneesMandatAccesDonneesPDL:metadonnees', $content);
@@ -403,7 +403,7 @@ class PdfTest extends TestCase
         $pdf->setMandat($this->sampleMandat);
 
         $content = file_get_contents($this->tempPdfPath);
-        
+
         // Vérifier que le XML est formaté (présence d'indentation)
         $this->assertStringContainsString('  <rdf:RDF', $content);
         $this->assertStringContainsString('    <rdf:Description', $content);
@@ -427,7 +427,7 @@ class PdfTest extends TestCase
         $pdf->getMandat();
     }
 
-    /**  
+    /**
      * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
      */
     public function testGetMandatWithPayloadWrapper(): void

@@ -151,7 +151,7 @@ class PartieTest extends TestCase
         $this->assertStringContainsString('<denominationSociale>ÉNERGIE &amp; CHÂTEAU SARL</denominationSociale>', $xml);
         $this->assertStringContainsString('<siren>123456789</siren>', $xml);
         $this->assertStringContainsString('<adresseSiegeSocial>Château de Versailles &amp; Co</adresseSiegeSocial>', $xml);
-        
+
         // Représentant légal
         $this->assertStringContainsString('<representantLegal>', $xml);
         $this->assertStringContainsString('<nom>Martin &amp; Associates</nom>', $xml);
@@ -417,7 +417,7 @@ class PartieTest extends TestCase
     {
         $representant = new RepresentantLegal(
             'Nom Test',
-            'Prénom Test', 
+            'Prénom Test',
             'Fonction Test',
             'test@email.com',
             '0123456789'
@@ -441,7 +441,7 @@ class PartieTest extends TestCase
     {
         $representant = new RepresentantLegal(
             'Nom & Test <tag>',
-            'Prénom "quoted"', 
+            'Prénom "quoted"',
             'Fonction & Spéciale',
             'test@email.com',
             '+33 (0) 1 23 45 67 89'

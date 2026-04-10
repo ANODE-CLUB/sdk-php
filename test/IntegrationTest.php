@@ -195,9 +195,13 @@ class IntegrationTest extends TestCase
 
         // 4. Test avec Parties complètes
         $mandant = new PersonnePhysique('Test', 'User', 'Address', 'test@example.com', '0123456789');
-        $mandataire = new PersonneMorale('Test Org', '123456789', 'Address', 
-            new RepresentantLegal('Legal', 'Rep', 'Fonction', 'legal@example.com', '0123456789'));
-        
+        $mandataire = new PersonneMorale(
+            'Test Org',
+            '123456789',
+            'Address',
+            new RepresentantLegal('Legal', 'Rep', 'Fonction', 'legal@example.com', '0123456789')
+        );
+
         $parties = new Parties($mandant, $mandataire);
         $xml = $parties->buildXml();
         $this->assertStringContainsString('<parties>', $xml);
@@ -304,7 +308,7 @@ class IntegrationTest extends TestCase
             ->add('PARTNER <ENERGY>');
 
         $donnees = new Donnees(true, false, true, -1); // Test durée négative
-        
+
         $pointsDeLivraison = (new PointsDeLivraison())
             ->add(new Prm('PRM-123&456<789>'))
             ->add(new Pce('PCE "SPECIAL" & CO'));
