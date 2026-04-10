@@ -2,7 +2,7 @@
     "name": "anode-club/sdk-php",
     "description": "SDK PHP de l'ANODE",
     "license": "MIT",
-    "keywords": ["ANODE", "Association pour la Normalisation et l’Organisation des Données Énergétiques", "SDK", "PHP"],
+    "keywords": ["ANODE", "SDK", "PHP"],
     "dist": {
         "url": "https://github.com/ANODE-CLUB/sdk-php",
         "type": "zip"
