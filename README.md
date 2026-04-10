@@ -19,7 +19,7 @@ Ce SDK PHP permet la gestion des métadonnées des **Mandats d'Accès aux Donné
 ### Installation via Composer
 
 ```bash
-composer install
+composer require anode-club/sdk-php
 ```
 
 ## Structure du projet
