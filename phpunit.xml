@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+         bootstrap="vendor/autoload.php"  
+         colors="true"
+         processIsolation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         cacheDirectory=".phpunit.cache"
+         backupGlobals="false"
+         beStrictAboutTestsThatDoNotTestAnything="false">
+
+    <testsuites>
+        <testsuite name="CNNE SDK Test Suite">
+            <directory>./test</directory>
+        </testsuite>
+    </testsuites>
+
+    <source>
+        <include>
+            <directory suffix=".php">./src</directory>
+        </include>
+    </source>
+
+    <coverage>
+        <report>
+            <html outputDirectory=".coverage/html" lowUpperBound="50" highLowerBound="90"/>
+            <text outputFile="php://stdout" showUncoveredFiles="true" showOnlySummary="false"/>
+            <clover outputFile=".coverage/clover.xml"/>
+        </report>
+    </coverage>
+
+    <logging>
+        <testdoxHtml outputFile=".coverage/testdox.html"/>
+        <testdoxText outputFile=".coverage/testdox.txt"/>
+    </logging>
+
+    <groups>
+        <exclude>
+            <group>slow</group>
+        </exclude>
+    </groups>
+
+    <php>
+        <ini name="error_reporting" value="-1"/>
+        <ini name="memory_limit" value="-1"/>
+        <server name="KERNEL_CLASS" value="App\Kernel"/>
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="999999"/>
+    </php>
+</phpunit>

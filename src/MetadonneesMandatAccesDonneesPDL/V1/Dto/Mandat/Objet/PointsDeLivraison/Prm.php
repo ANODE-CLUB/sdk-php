@@ -1,0 +1,19 @@
+<?php
+
+namespace Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\PointsDeLivraison;
+
+readonly class Prm
+{
+    public function __construct(
+        public string $valeur
+    ) {
+        if (!$valeur) {
+            throw new \InvalidArgumentException('La valeur est obligatoire.');
+        }
+    }
+
+    public function __toString(): string
+    {
+        return $this->valeur;
+    }
+}
