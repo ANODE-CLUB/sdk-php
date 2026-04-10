@@ -1,0 +1,15 @@
+# Dependencies
+vendor/
+
+# Linter
+.php-cs-fixer.cache
+
+# Test
+.coverage/
+.phpunit.cache/
+.phpunit.result.cache
+
+# Dev
+.DS_Store
+docker-compose.yml
+.vscode/

@@ -1,0 +1,31 @@
+{
+    "name": "anode/sdk-php",
+    "description": "SDK PHP de l'ANODE",
+    "license": "MIT",
+    "keywords": ["ANODE", "Association pour la Normalisation et l’Organisation des Données Énergétiques", "SDK", "PHP"],
+    "dist": {
+        "url": "https://github.com/ANODE-CLUB/sdk-php",
+        "type": "zip"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "3.*",
+		"phpstan/phpstan": "2.*",
+        "phpunit/phpunit": "13.*"
+    },
+    "scripts": {
+        "lint": "vendor/bin/php-cs-fixer fix ./ --rules=@PSR12",
+        "analyse": "vendor/bin/phpstan analyse src --memory-limit=4G",
+        "test": "vendor/bin/phpunit test --testdox",
+        "coverage": "XDEBUG_MODE=coverage vendor/bin/phpunit test --coverage-html .coverage/html"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anode\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "test/"
+        }
+    }
+}
