@@ -2,19 +2,19 @@
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonnePhysique;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale\RepresentantLegal;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\Delegations;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\Donnees;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\PointsDeLivraison;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\PointsDeLivraison\Pce;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\PointsDeLivraison\Prm;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Consentement;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonnePhysique;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale\RepresentantLegal;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\Delegations;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\Donnees;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\PointsDeLivraison;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\PointsDeLivraison\Pce;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\PointsDeLivraison\Prm;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Consentement;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf;
 
 $mandat = new Mandat(
     new Parties(

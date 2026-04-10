@@ -1,5 +1,5 @@
 {
-    "name": "anode/sdk-php",
+    "name": "anode-club/sdk-php",
     "description": "SDK PHP de l'ANODE",
     "license": "MIT",
     "keywords": ["ANODE", "Association pour la Normalisation et l’Organisation des Données Énergétiques", "SDK", "PHP"],
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Anode\\": "src/"
+            "AnodeClub\\": "src/"
         }
     },
     "autoload-dev": {

@@ -3,7 +3,7 @@
 namespace Test;
 
 use PHPUnit\Framework\TestCase;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Consentement;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Consentement;
 
 class ConsentementTest extends TestCase
 {

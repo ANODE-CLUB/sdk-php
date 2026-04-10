@@ -3,17 +3,17 @@
 namespace Test;
 
 use PHPUnit\Framework\TestCase;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonnePhysique;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale\RepresentantLegal;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\Delegations;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\Donnees;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\PointsDeLivraison;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Consentement;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonnePhysique;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale\RepresentantLegal;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\Delegations;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\Donnees;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\PointsDeLivraison;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Consentement;
 
 class PdfTest extends TestCase
 {
@@ -56,7 +56,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::__construct
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::__construct
      */
     public function testConstructor(): void
     {
@@ -65,7 +65,7 @@ class PdfTest extends TestCase
         $this->assertSame('/path/to/file.pdf', $pdf->filePath);
     }
 
-    /**     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::__construct
+    /**     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::__construct
      */
     public function testConstructorWithRealFile(): void
     {
@@ -75,7 +75,7 @@ class PdfTest extends TestCase
         $this->assertSame($this->tempPdfPath, $pdf->filePath);
     }
 
-    /**     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
+    /**     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
      */
     public function testSetMandatOnEmptyFile(): void
     {
@@ -94,7 +94,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
      */
     public function testSetMandatWithExistingXmpMeta(): void
     {
@@ -111,7 +111,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
      */
     public function testSetMandatWithExistingRdf(): void
     {
@@ -127,7 +127,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
      */
     public function testSetMandatReplaceExistingPayload(): void
     {
@@ -144,8 +144,8 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
      */
     public function testGetMandatSuccess(): void
     {
@@ -166,7 +166,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
      */
     public function testGetMandatNoXmpMeta(): void
     {
@@ -183,7 +183,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
      */
     public function testGetMandatNoPayload(): void
     {
@@ -200,7 +200,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
      */
     public function testGetMandatInvalidXml(): void
     {
@@ -216,8 +216,8 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
      */
     public function testRoundTripComplexMandat(): void
     {
@@ -285,7 +285,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getContent
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getContent
      */
     public function testGetContent(): void
     {
@@ -299,7 +299,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
      */
     public function testGetMandatWithEmptyPayload(): void
     {
@@ -316,7 +316,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
      */
     public function testGetMandatWithPayloadRootTag(): void
     {
@@ -333,7 +333,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
      */
     public function testSetMandatWithXmpMetaButNoRdf(): void
     {
@@ -352,7 +352,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
      */
     public function testSetMandatWithRdfButNoDescription(): void
     {
@@ -372,7 +372,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
      */
     public function testSetMandatWithExistingDescription(): void
     {
@@ -391,7 +391,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::setMandat
      */
     public function testSetMandatFormattingAndIndentation(): void
     {
@@ -410,7 +410,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
      */
     public function testGetMandatWithMalformedMandatXml(): void
     {
@@ -428,7 +428,7 @@ class PdfTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf::getMandat
      */
     public function testGetMandatWithPayloadWrapper(): void
     {

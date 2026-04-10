@@ -1,8 +1,8 @@
 <?php
 
-namespace Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler;
+namespace AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler;
 
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
 
 final readonly class Pdf
 {
