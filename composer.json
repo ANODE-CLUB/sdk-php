@@ -3,10 +3,6 @@
     "description": "SDK PHP de l'ANODE",
     "license": "MIT",
     "keywords": ["ANODE", "SDK", "PHP"],
-    "dist": {
-        "url": "https://github.com/ANODE-CLUB/sdk-php",
-        "type": "zip"
-    },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "3.*",
 		"phpstan/phpstan": "2.*",
