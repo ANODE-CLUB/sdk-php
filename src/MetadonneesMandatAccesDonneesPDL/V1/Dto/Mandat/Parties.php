@@ -1,9 +1,9 @@
 <?php
 
-namespace Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
+namespace AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
 
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Mandataire;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Mandataire;
 
 readonly class Parties
 {

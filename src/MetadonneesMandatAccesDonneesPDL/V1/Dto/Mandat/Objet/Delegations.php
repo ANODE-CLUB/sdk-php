@@ -1,6 +1,6 @@
 <?php
 
-namespace Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet;
+namespace AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet;
 
 class Delegations
 {

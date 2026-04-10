@@ -3,10 +3,10 @@
 namespace Test;
 
 use PHPUnit\Framework\TestCase;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonnePhysique;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale\RepresentantLegal;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonnePhysique;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale\RepresentantLegal;
 
 class PartieTest extends TestCase
 {
@@ -350,7 +350,7 @@ class PartieTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie::makeFromXml
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie::makeFromXml
      */
     public function testPartieStaticMakeFromXmlPersonnePhysique(): void
     {
@@ -363,7 +363,7 @@ class PartieTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie::makeFromXml
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie::makeFromXml
      */
     public function testPartieStaticMakeFromXmlPersonneMorale(): void
     {
@@ -376,7 +376,7 @@ class PartieTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie::makeFromXml
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie::makeFromXml
      */
     public function testPartieStaticMakeFromXmlInvalidType(): void
     {
@@ -389,7 +389,7 @@ class PartieTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale::buildXml
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale::buildXml
      */
     public function testPersonneMoraleBuildXmlWithNullRepresentant(): void
     {
@@ -411,7 +411,7 @@ class PartieTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale\RepresentantLegal::buildXml
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale\RepresentantLegal::buildXml
      */
     public function testRepresentantLegalBuildXmlDirectly(): void
     {
@@ -435,7 +435,7 @@ class PartieTest extends TestCase
     }
 
     /**
-     * @covers Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale\RepresentantLegal::buildXml
+     * @covers AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties\Partie\PersonneMorale\RepresentantLegal::buildXml
      */
     public function testRepresentantLegalBuildXmlWithSpecialCharacters(): void
     {

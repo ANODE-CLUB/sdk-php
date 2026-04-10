@@ -1,6 +1,6 @@
 <?php
 
-namespace Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
+namespace AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
 
 readonly class Consentement
 {

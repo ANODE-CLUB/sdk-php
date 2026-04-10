@@ -3,7 +3,7 @@
 namespace Test;
 
 use PHPUnit\Framework\TestCase;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\PointsDeLivraison\Prm;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\PointsDeLivraison\Prm;
 
 class PrmTest extends TestCase
 {

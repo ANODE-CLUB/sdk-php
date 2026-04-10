@@ -1,10 +1,10 @@
 <?php
 
-namespace Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto;
+namespace AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto;
 
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Consentement;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Parties;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Consentement;
 
 readonly class Mandat
 {

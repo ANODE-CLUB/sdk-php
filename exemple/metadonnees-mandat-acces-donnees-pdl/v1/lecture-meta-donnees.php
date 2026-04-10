@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Handler\Pdf;
 
 $pdfHandler = new Pdf(
     'mandat.pdf'

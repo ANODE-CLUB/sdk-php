@@ -1,10 +1,10 @@
 <?php
 
-namespace Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
+namespace AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
 
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\Delegations;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\Donnees;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\PointsDeLivraison;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\Delegations;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\Donnees;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Objet\PointsDeLivraison;
 
 readonly class Objet
 {

@@ -3,18 +3,18 @@
 namespace Test\Mandat\Dto;
 
 use PHPUnit\Framework\TestCase;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PersonnePhysique;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PersonneMorale;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PersonneMorale\Organisation;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PersonneMorale\RepresentantLegal;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Mandataire;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Mandataire\Delegations;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Donnees;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PointsDeLivraison;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PointsDeLivraison\Prm;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PointsDeLivraison\Pce;
-use Anode\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Consentement;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PersonnePhysique;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PersonneMorale;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PersonneMorale\Organisation;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PersonneMorale\RepresentantLegal;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Mandataire;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Mandataire\Delegations;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Donnees;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PointsDeLivraison;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PointsDeLivraison\Prm;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\PointsDeLivraison\Pce;
+use AnodeClub\MetadonneesMandatAccesDonneesPDL\V1\Dto\Mandat\Consentement;
 
 class MetadonneesMandatAccesDonneesPDLTest extends TestCase
 {
