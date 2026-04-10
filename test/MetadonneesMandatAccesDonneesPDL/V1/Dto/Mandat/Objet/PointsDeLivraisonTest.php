@@ -149,7 +149,8 @@ class PointsDeLivraisonTest extends TestCase
 
         $this->assertStringContainsString('<pointsDeLivraison>', $xml);
         $this->assertStringContainsString('</pointsDeLivraison>', $xml);
-        $this->assertStringNotContainsString('<pointDeLivraison>', $xml);
+        $this->assertStringNotContainsString('<prm>', $xml);
+        $this->assertStringNotContainsString('<pce>', $xml);
     }
 
     public function testBuildXmlWithPrmOnly(): void
@@ -160,9 +161,7 @@ class PointsDeLivraisonTest extends TestCase
         $xml = $pointsDeLivraison->buildXml();
 
         $this->assertStringContainsString('<pointsDeLivraison>', $xml);
-        $this->assertStringContainsString('<pointDeLivraison>', $xml);
         $this->assertStringContainsString('<prm>12345678901234</prm>', $xml);
-        $this->assertStringContainsString('</pointDeLivraison>', $xml);
         $this->assertStringContainsString('</pointsDeLivraison>', $xml);
         $this->assertStringNotContainsString('<pce>', $xml);
     }
@@ -175,9 +174,7 @@ class PointsDeLivraisonTest extends TestCase
         $xml = $pointsDeLivraison->buildXml();
 
         $this->assertStringContainsString('<pointsDeLivraison>', $xml);
-        $this->assertStringContainsString('<pointDeLivraison>', $xml);
         $this->assertStringContainsString('<pce>GI123456</pce>', $xml);
-        $this->assertStringContainsString('</pointDeLivraison>', $xml);
         $this->assertStringContainsString('</pointsDeLivraison>', $xml);
         $this->assertStringNotContainsString('<prm>', $xml);
     }
@@ -195,10 +192,6 @@ class PointsDeLivraisonTest extends TestCase
         $this->assertStringContainsString('<prm>12345678901234</prm>', $xml);
         $this->assertStringContainsString('<pce>GI123456</pce>', $xml);
         $this->assertStringContainsString('<prm>56789012345678</prm>', $xml);
-
-        // Compter le nombre de balises pointDeLivraison
-        $this->assertSame(3, substr_count($xml, '<pointDeLivraison>'));
-        $this->assertSame(3, substr_count($xml, '</pointDeLivraison>'));
     }
 
     public function testMakeFromXmlEmpty(): void
@@ -222,9 +215,7 @@ class PointsDeLivraisonTest extends TestCase
     {
         $xmlString = '
         <pointsDeLivraison>
-            <pointDeLivraison>
-                <prm>12345678901234</prm>
-            </pointDeLivraison>
+            <prm>12345678901234</prm>
         </pointsDeLivraison>';
 
         $xml = simplexml_load_string($xmlString);
@@ -244,9 +235,7 @@ class PointsDeLivraisonTest extends TestCase
     {
         $xmlString = '
         <pointsDeLivraison>
-            <pointDeLivraison>
-                <pce>GI123456</pce>
-            </pointDeLivraison>
+            <pce>GI123456</pce>
         </pointsDeLivraison>';
 
         $xml = simplexml_load_string($xmlString);
@@ -266,15 +255,9 @@ class PointsDeLivraisonTest extends TestCase
     {
         $xmlString = '
         <pointsDeLivraison>
-            <pointDeLivraison>
-                <prm>12345678901234</prm>
-            </pointDeLivraison>
-            <pointDeLivraison>
-                <pce>GI123456</pce>
-            </pointDeLivraison>
-            <pointDeLivraison>
-                <prm>56789012345678</prm>
-            </pointDeLivraison>
+            <prm>12345678901234</prm>
+            <pce>GI123456</pce>
+            <prm>56789012345678</prm>
         </pointsDeLivraison>';
 
         $xml = simplexml_load_string($xmlString);
@@ -290,11 +273,11 @@ class PointsDeLivraisonTest extends TestCase
         $this->assertInstanceOf(Prm::class, $points[0]);
         $this->assertSame('12345678901234', $points[0]->valeur);
 
-        $this->assertInstanceOf(Pce::class, $points[1]);
-        $this->assertSame('GI123456', $points[1]->valeur);
+        $this->assertInstanceOf(Prm::class, $points[1]);
+        $this->assertSame('56789012345678', $points[1]->valeur);
 
-        $this->assertInstanceOf(Prm::class, $points[2]);
-        $this->assertSame('56789012345678', $points[2]->valeur);
+        $this->assertInstanceOf(Pce::class, $points[2]);
+        $this->assertSame('GI123456', $points[2]->valeur);
     }
 
     public function testMakeFromXmlWithBothPrmAndPceInSamePoint(): void
@@ -302,10 +285,8 @@ class PointsDeLivraisonTest extends TestCase
         // Edge case: point avec à la fois PRM et PCE
         $xmlString = '
         <pointsDeLivraison>
-            <pointDeLivraison>
-                <prm>12345678901234</prm>
-                <pce>GI123456</pce>
-            </pointDeLivraison>
+            <prm>12345678901234</prm>
+            <pce>GI123456</pce>
         </pointsDeLivraison>';
 
         $xml = simplexml_load_string($xmlString);
@@ -317,19 +298,21 @@ class PointsDeLivraisonTest extends TestCase
         }
 
         // Seul le PCE devrait être ajouté (traité en dernier dans le code)
-        $this->assertCount(1, $points);
-        $this->assertInstanceOf(Pce::class, $points[0]);
-        $this->assertSame('GI123456', $points[0]->valeur);
+        $this->assertCount(2, $points);
+        $this->assertInstanceOf(Prm::class, $points[0]);
+        $this->assertSame('12345678901234', $points[0]->valeur);
+        $this->assertInstanceOf(Pce::class, $points[1]);
+        $this->assertSame('GI123456', $points[1]->valeur);
     }
 
     public function testRoundTripSerialization(): void
     {
         $originalPoints = new PointsDeLivraison();
         $prm1 = new Prm('12345678901234');
-        $pce1 = new Pce('GI123456');
         $prm2 = new Prm('56789012345678');
+        $pce1 = new Pce('GI123456');
 
-        $originalPoints->add($prm1)->add($pce1)->add($prm2);
+        $originalPoints->add($prm1)->add($prm2)->add($pce1);
 
         // Sérialisation
         $xml = $originalPoints->buildXml();

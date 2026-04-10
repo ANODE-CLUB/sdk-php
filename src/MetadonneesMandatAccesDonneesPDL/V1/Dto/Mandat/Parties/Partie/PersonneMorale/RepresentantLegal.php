@@ -43,7 +43,11 @@ readonly class RepresentantLegal
 
     public static function makeFromXml(
         \SimpleXMLElement $representantLegal
-    ): self {
+    ): ?self {
+        if (!$representantLegal->nom && !$representantLegal->prenom && !$representantLegal->fonction && !$representantLegal->adresseEmail && !$representantLegal->numeroTelephone) {
+            return null;
+        }
+
         return new self(
             (string) $representantLegal->nom,
             (string) $representantLegal->prenom,
