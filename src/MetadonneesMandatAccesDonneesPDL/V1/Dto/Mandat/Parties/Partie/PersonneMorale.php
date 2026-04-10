@@ -44,7 +44,7 @@ readonly class PersonneMorale extends Partie
             (string) $personneMorale->denominationSociale,
             (string) $personneMorale->siren,
             (string) $personneMorale->adresseSiegeSocial,
-            RepresentantLegal::makeFromXml($personneMorale->representantLegal)
+            $personneMorale->representantLegal->nom ? RepresentantLegal::makeFromXml($personneMorale->representantLegal) : null
         );
     }
 }
